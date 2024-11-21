@@ -2,7 +2,7 @@ import { Button, Input, Select, Stepper, Typography } from "f1-demo-components";
 import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 
-const DrawerContent = () => {
+const DrawerContent = ({ onCancel }: { onCancel: () => void }) => {
   const steps = [
     { id: 1, label: "Create or Select a client" },
     { id: 2, label: "Select a budget" },
@@ -59,27 +59,26 @@ const DrawerContent = () => {
                 options={[
                   { label: "UTC", value: "utc" },
                   { label: "America/New_York", value: "america/new_york" },
-                  { label: "Europe/London", value: "europe/london" },
+                  { label: "Asia/Kolkata", value: "asia/kolkata" },
                 ]}
               />
               <Select
                 label="Currency"
                 placeholder="Select Currency"
                 options={[
-                  { label: "Client 1", value: "client1" },
-                  { label: "Client 2", value: "client2" },
-                  { label: "Client 3", value: "client3" },
+                  { label: "Option 1", value: "Option1" },
+                  { label: "Option 2", value: "Option2" },
+                  { label: "Option 3", value: "Option3" },
                 ]}
               />
               <Select
                 label="Email Notification"
                 placeholder="Select users"
                 options={[
-                  { label: "Client 1", value: "" },
-                  { label: "Client 2", value: "client2" },
-                  { label: "Client 3", value: "client3" },
+                  { label: "Option 1", value: "Option1" },
+                  { label: "Option 2", value: "Option2" },
+                  { label: "Option 3", value: "Option3" },
                 ]}
-                value=""
               />
             </div>
             {/* right */}
@@ -126,7 +125,9 @@ const DrawerContent = () => {
         )}
         {/* footer */}
         <div className="fixed bottom-0 left-0 w-full flex justify-end  gap-3 px-8 py-4 bg-[#f5f5f5]">
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="secondary" onClick={onCancel}>
+            Cancel
+          </Button>
           <Button variant="primary" onClick={goToNextStep}>
             Next
           </Button>

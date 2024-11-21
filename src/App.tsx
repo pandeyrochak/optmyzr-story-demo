@@ -5,10 +5,13 @@ import DrawerContent from "./components/DrawerContent";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   return (
-    <div className="flex flex-col gap-4 items-center justify-center">
-      <Typography variant="subtitle2" className="text-primary">
-        Hello World
+    <div className="flex flex-col gap-4 items-center justify-center h-screen">
+      <Typography variant="subtitle2" className="">
+        This demo uses storybook components as npm package.
       </Typography>
       <Button variant="secondary" onClick={() => setIsOpen(true)}>
         Open Drawer
@@ -19,7 +22,7 @@ function App() {
         direction="right"
         width="400px"
       >
-        <DrawerContent />
+        <DrawerContent onCancel={handleClose} />
       </Drawer>
     </div>
   );
