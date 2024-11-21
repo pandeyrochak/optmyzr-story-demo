@@ -1,11 +1,5 @@
-import {
-  Button,
-  Typography,
-  Stepper,
-  Select,
-  Input,
-} from "f1-demo-components";
-import { X, RefreshCw } from "lucide-react";
+import { Button, Input, Select, Stepper, Typography } from "f1-demo-components";
+import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 
 const DrawerContent = () => {
